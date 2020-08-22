@@ -1,0 +1,14 @@
+gateway:
+  ip: 192.168.1.112
+
+token:
+  expiration_time: 864000000 # 10 days
+  secret: '{cipher}AQAu67CxK03vu79Xj/IM5HFzutkyJMlNd58zFl6Md+6SPeIFPnPdmoIKNv1/iH406/g9pbutcBhqwWzRSTY4zMLs39gsBNxbX5RqXrhBM+uNjbK5xP0XyruqZgqENkozH/EXq7lq59m4My0J69C9tjzFmH4lJPBI1D4L+zpuRCJX8E2FJc0din6veL1A9pXcTkPhPkNAXO5MBs8KSljAiKXlxZSEl/4vo9/FB37yhmG32fF6tkSWbQPGT+fPyDGhehRRBeri/azeI8IZpxac8uENPVzS5TU+m/tU+XpKNTST/so1lFU7zxo4WajBn4zwSTyy2FECdJT6nT3bImpD6ew2Q9xboX52rhgF2wit48C7M+H/4I2yizpOThgXqpWqU8U='
+ 
+myEureka:
+ password: '{cipher}AQA3DUwP3NeEsc041GvqZbMG7y0NTTNuYre/xduHvrJhaotq4YkDKiHiK1Zeh63TD/mr5hAEGrtlw1bz0DbOGtpeM/mPrOS7bgAn7xQ5NasGTg8LRpjI1Cz4PoVGhCe6R+GRpKYp5PXTn37EmlodlDf8XPs7oUfOYYPPEDTgyDRhU0pX6C3gU7zJoZyNjXpoXOxl4j0nPKS/Nmmz79zPdTnKCAH146r40RoWVoPFdsFIiuCPWBbjj+gRHpgt23Jlc3N2IbC14jDBGt42f8rx/a3ZsDZZA2o3Coszp3Tlk7XCfyKrv2STWJ1PFJePUklDt5dpKkl9CpmKiyt4PPcQMr/8t35buFo24uFU5JVXLCCuyPFXM6qp5oV4OEVgtS/KQew='
+ 
+eureka:
+  client:
+    service-url: 
+      defaultZone: 'http://test:${myEureka.password}@localhost:8010/eureka/'

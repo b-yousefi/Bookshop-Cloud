@@ -1,0 +1,30 @@
+server:
+  port: 8012
+
+spring:
+  profiles:
+    active: native
+  application:
+    name: apiConfigServer
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///F:/Project/Bookshop-Cloud/data/configserver-native
+        git:
+          uri: https://bitbucket.org/b_yousefi/cloudcourseconfigserver
+          username: b_yousefi
+          password: b_yousefi
+          clone-on-start: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: b_yousefi
+    password: b_yousefi
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+

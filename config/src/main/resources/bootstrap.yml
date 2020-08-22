@@ -1,0 +1,5 @@
+encrypt:
+  key-store:
+    location: classpath:apiEncryptionKey.jks
+    password: 1hgj@6sRTxsW98
+    alias: apiEncryptionKey

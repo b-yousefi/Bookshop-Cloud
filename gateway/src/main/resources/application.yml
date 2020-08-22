@@ -1,0 +1,66 @@
+server:
+  port: 8011
+  
+spring:
+  application:
+    name: zuul
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: b_yousefi
+    password: b_yousefi
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/
+
+zuul:
+  ribbon:
+    eager-load:
+      enabled: true
+api:
+  login:
+    url:
+      path: /users-ws/authenticate
+  registration:
+    url:
+      path: /users-ws/register
+  zuul:
+    actuator:
+      url:
+        path: /actuator/*
+  users:
+    h2console:
+      url:
+        path: /users-ws/h2-console/**
+    actuator:
+      url:
+        path: /users-ws/actuator/*
+    url:
+      path: /users-ws/users/*
+    swagger:
+      uip:
+        url:
+          path: /users-ws/swagger-ui.html
+      ui:
+        url:
+          path: /users-ws/swagger-ui/**
+      doc:
+        url:
+          path: /users-ws/v3/api-docs/**
+
+authorization:
+  token:
+    header:
+      name: Authorization
+      prefix: Bearer
+
+management:
+  trace:
+    http:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: beans,health,routes,httptrace
